@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/api-gateway-e2e"
+    },
+    {
+      "path": "./apps/api-gateway"
+    },
+    {
+      "path": "./register-service-e2e"
+    },
+    {
+      "path": "./register-service"
+    },
+    {
+      "path": "./apps/register-service-e2e"
+    },
+    {
+      "path": "./apps/register-service"
+    }
+  ]
+}
