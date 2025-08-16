@@ -16,15 +16,16 @@
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
-    "@nx/eslint": "21.3.11",
-    "@nx/eslint-plugin": "21.3.11",
-    "@nx/jest": "21.3.11",
-    "@nx/js": "21.3.11",
-    "@nx/nest": "21.3.11",
-    "@nx/node": "21.3.11",
-    "@nx/web": "21.3.11",
-    "@nx/webpack": "21.3.11",
-    "@nx/workspace": "21.3.11",
+    "@nx/docker": "21.4.0",
+    "@nx/eslint": "21.4.0",
+    "@nx/eslint-plugin": "21.4.0",
+    "@nx/jest": "21.4.0",
+    "@nx/js": "21.4.0",
+    "@nx/nest": "21.4.0",
+    "@nx/node": "21.4.0",
+    "@nx/web": "21.4.0",
+    "@nx/webpack": "21.4.0",
+    "@nx/workspace": "21.4.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
@@ -36,7 +37,7 @@
     "jest": "^30.0.2",
     "jest-environment-node": "^30.0.2",
     "jest-util": "^30.0.2",
-    "nx": "21.3.11",
+    "nx": "21.4.0",
     "prettier": "^2.6.2",
     "ts-jest": "^29.4.0",
     "ts-node": "10.9.1",
@@ -46,8 +47,6 @@
     "webpack-cli": "^5.1.4"
   },
   "workspaces": [
-    "apps/*",
-    "register-service",
-    "register-service-e2e"
+    "apps/*"
   ]
 }

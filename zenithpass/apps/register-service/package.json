@@ -10,7 +10,8 @@
           "command": "webpack-cli build",
           "args": [
             "--node-env=production"
-          ]
+          ],
+          "cwd": "apps/register-service"
         },
         "configurations": {
           "development": {
@@ -19,6 +20,40 @@
             ]
           }
         }
+      },
+      "prune-lockfile": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "executor": "@nx/js:prune-lockfile",
+        "outputs": [
+          "{workspaceRoot}/apps/register-service/dist/package.json",
+          "{workspaceRoot}/apps/register-service/dist/package-lock.json"
+        ],
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "copy-workspace-modules": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "outputs": [
+          "{workspaceRoot}/apps/register-service/dist/workspace_modules"
+        ],
+        "executor": "@nx/js:copy-workspace-modules",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "prune": {
+        "dependsOn": [
+          "prune-lockfile",
+          "copy-workspace-modules"
+        ],
+        "executor": "nx:noop"
       },
       "serve": {
         "continuous": true,
@@ -44,7 +79,14 @@
         "options": {
           "passWithNoTests": true
         }
+      },
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "prune"
+        ]
       }
     }
-  }
+  },
+  "dependencies": {}
 }
