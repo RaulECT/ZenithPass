@@ -13,5 +13,29 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  # API Gateway
+  api_gateway:
+    build:
+      context: ./zenithpass/apps/api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_db
+
+  # Register Service
+  register_service:
+    build:
+      context: ./zenithpass/apps/register-service
+      dockerfile: Dockerfile
+    container_name: register-service
+    ports:
+      - "3001:3000"
+    depends_on:
+      - postgres_db
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_db:5432/${POSTGRES_DB}
+
 volumes:
   postgres_data:
