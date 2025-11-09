@@ -2,7 +2,9 @@
   "name": "@zenithpass/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:docker": "nx run-many --target=build --projects=api-gateway,register-service"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^11.0.0",
