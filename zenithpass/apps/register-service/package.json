@@ -88,5 +88,14 @@
       }
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "typeorm": "^0.3.27",
+    "pg": "^8.16.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0"
+  }
 }
